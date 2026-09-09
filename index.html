@@ -3,52 +3,90 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#ffc8dd">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#ffc8dd"
+    >
 
     <title>Para a Izza 💗</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 </head>
 
 <body>
 
-    <!-- =========================
-         ÁUDIOS
-    ========================== -->
+    <!-- =====================================
+         MÚSICAS
+    ====================================== -->
 
-    <!-- Trecho do MC VV -->
-    <audio id="musicaMC" preload="auto">
-        <source src="musica.mp3" type="audio/mpeg">
+    <!-- FROM THE START -->
+    <audio
+        id="musicaInicio"
+        preload="auto"
+    >
+        <source
+            src="inicio.mp3"
+            type="audio/mpeg"
+        >
     </audio>
 
-    <!-- I Wanna Be Yours -->
-    <audio id="musicaRomantica" preload="auto">
-        <source src="romantica.mp3" type="audio/mpeg">
+
+    <!-- MC VV -->
+    <audio
+        id="musicaMC"
+        preload="auto"
+    >
+        <source
+            src="musica.mp3"
+            type="audio/mpeg"
+        >
     </audio>
 
 
-    <!-- =========================
+    <!-- I WANNA BE YOURS -->
+    <audio
+        id="musicaRomantica"
+        preload="auto"
+    >
+        <source
+            src="romantica.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <!-- =====================================
          BARRA DE PROGRESSO
-    ========================== -->
+    ====================================== -->
 
     <div class="barra-topo">
+
         <div
             class="progresso"
             id="progresso"
         ></div>
+
     </div>
 
 
-    <!-- CORAÇÕES -->
+    <!-- CORAÇÕES DE FUNDO -->
     <div id="coracoes"></div>
 
 
     <main>
 
-        <!-- =========================
+        <!-- =====================================
              INÍCIO
-        ========================== -->
+        ====================================== -->
 
         <section
             class="tela inicio"
@@ -61,10 +99,12 @@
                     para uma certa pessoa 👀
                 </p>
 
+
                 <h1
                     class="titulo-digitando"
                     id="tituloDigitando"
                 ></h1>
+
 
                 <p
                     class="sub inicio-sub escondido-suave"
@@ -73,13 +113,19 @@
                     Eu queria fazer isso de um jeito um pouquinho diferente.
                 </p>
 
+
+                <!--
+                    AQUI COMEÇA FROM THE START
+                -->
+
                 <button
                     class="botao-principal escondido-suave"
                     id="inicioBotao"
-                    onclick="irPara('gatos')"
+                    onclick="comecarSite()"
                 >
                     quero ver 👀
                 </button>
+
 
                 <div class="setinha">
                     ↓
@@ -90,9 +136,9 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =====================================
              GATOS
-        ========================== -->
+        ====================================== -->
 
         <section
             class="tela"
@@ -105,9 +151,11 @@
                     etapa 1
                 </p>
 
+
                 <h2>
                     Consultei meus especialistas.
                 </h2>
+
 
                 <p class="sub">
                     decisões importantes exigem opiniões muito confiáveis.
@@ -115,6 +163,7 @@
 
 
                 <div class="galeria-gatos">
+
 
                     <div class="polaroid gato1">
 
@@ -178,14 +227,18 @@
 
                 <div class="bilhete">
 
-                    <span>💌</span>
+                    <span>
+                        💌
+                    </span>
 
                     Mesmo assim, os três chegaram à mesma conclusão...
 
                 </div>
 
 
-                <button onclick="irPara('live')">
+                <button
+                    onclick="irPara('live')"
+                >
                     qual? 🤨
                 </button>
 
@@ -194,9 +247,9 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =====================================
              LIVE
-        ========================== -->
+        ====================================== -->
 
         <section
             class="tela diferente"
@@ -209,6 +262,7 @@
                     uma coisa que acontece frequentemente
                 </p>
 
+
                 <h2>
                     Você tentando me motivar:
                 </h2>
@@ -216,11 +270,13 @@
 
                 <div class="chat">
 
+
                     <div class="chat-topo">
 
                         <div class="avatar">
                             I
                         </div>
+
 
                         <div>
 
@@ -241,13 +297,16 @@
                         abre live
                     </div>
 
+
                     <div class="bolha-chat">
                         vai abrir live?
                     </div>
 
+
                     <div class="bolha-chat grande">
                         ABRE LIVE
                     </div>
+
 
                 </div>
 
@@ -256,9 +315,11 @@
                     Você fica me mandando abrir live toda hora KKKKK.
                 </p>
 
+
                 <p class="texto">
                     E por mais que eu fique enrolando...
                 </p>
+
 
                 <p class="texto destaque">
                     eu gosto de saber que você tá ali me incentivando
@@ -266,7 +327,9 @@
                 </p>
 
 
-                <button onclick="irPara('coisas')">
+                <button
+                    onclick="irPara('coisas')"
+                >
                     tem mais 💗
                 </button>
 
@@ -275,9 +338,9 @@
         </section>
 
 
-        <!-- =========================
-             COISAS
-        ========================== -->
+        <!-- =====================================
+             COISAS QUE GOSTO
+        ====================================== -->
 
         <section
             class="tela"
@@ -290,6 +353,7 @@
                     algumas coisas
                 </p>
 
+
                 <h2>
                     Coisas que eu gosto em você 💗
                 </h2>
@@ -297,9 +361,12 @@
 
                 <div class="cards-amor">
 
+
                     <div class="amor-card reveal-item">
 
-                        <span>💗</span>
+                        <span>
+                            💗
+                        </span>
 
                         <p>
                             Eu gosto de conversar com você.
@@ -310,7 +377,9 @@
 
                     <div class="amor-card reveal-item">
 
-                        <span>🫶</span>
+                        <span>
+                            🫶
+                        </span>
 
                         <p>
                             Eu gosto de como você tenta me motivar.
@@ -321,7 +390,9 @@
 
                     <div class="amor-card reveal-item">
 
-                        <span>😭</span>
+                        <span>
+                            😭
+                        </span>
 
                         <p>
                             Eu gosto até das nossas conversas completamente aleatórias.
@@ -332,7 +403,9 @@
 
                     <div class="amor-card reveal-item">
 
-                        <span>📱</span>
+                        <span>
+                            📱
+                        </span>
 
                         <p>
                             Até o seu “ABRE LIVE” virou uma coisa que eu gosto KKKKK.
@@ -343,7 +416,9 @@
 
                     <div class="amor-card principal-amor reveal-item">
 
-                        <span>💕</span>
+                        <span>
+                            💕
+                        </span>
 
                         <p>
                             E, sem eu perceber direito, você foi ficando cada vez mais importante pra mim.
@@ -354,9 +429,14 @@
                 </div>
 
 
-                <!-- ESSE BOTÃO INICIA O MC VV -->
+                <!--
+                    PARA FROM THE START
+                    E COMEÇA MC VV
+                -->
 
-                <button onclick="irParaMusicas()">
+                <button
+                    onclick="irParaMusicas()"
+                >
                     continua 👀
                 </button>
 
@@ -365,9 +445,9 @@
         </section>
 
 
-        <!-- =========================
-             MÚSICA / MC VV
-        ========================== -->
+        <!-- =====================================
+             MC VV
+        ====================================== -->
 
         <section
             class="tela diferente"
@@ -380,6 +460,7 @@
                     aumenta o volume KKKKK
                 </p>
 
+
                 <h2>
                     Uma escolha musical extremamente séria e romântica...
                 </h2>
@@ -390,6 +471,7 @@
                     id="playerMCVV"
                     onclick="tocarMCVV()"
                 >
+
 
                     <div
                         class="disco"
@@ -408,9 +490,11 @@
                             PREPARADO...
                         </p>
 
+
                         <h3>
                             MC VV — Nós Dois Contra o Mundo
                         </h3>
+
 
                         <p>
                             sim, eu realmente coloquei MC VV no pedido de namoro KKKKK
@@ -436,6 +520,7 @@
                     toca no CD se quiser pausar ou continuar 🎵
                 </p>
 
+
                 <p class="risada">
                     não reclama, meu amor KKKKKKK
                 </p>
@@ -446,7 +531,9 @@
                     COMEÇA I WANNA BE YOURS
                 -->
 
-                <button onclick="agoraSerio()">
+                <button
+                    onclick="agoraSerio()"
+                >
                     tá... agora sério 💗
                 </button>
 
@@ -455,9 +542,9 @@
         </section>
 
 
-        <!-- =========================
-             CARTA
-        ========================== -->
+        <!-- =====================================
+             PARTE SÉRIA
+        ====================================== -->
 
         <section
             class="tela serio"
@@ -470,12 +557,14 @@
                     agora sem zoeira
                 </p>
 
+
                 <h2>
                     Meu bem...
                 </h2>
 
 
                 <div class="carta">
+
 
                     <div class="coracao-carta">
                         💗
@@ -486,19 +575,22 @@
                         Eu gosto muito de ter você na minha vida.
                     </p>
 
+
                     <p>
                         Gosto das nossas conversas, das besteiras,
-                        dos momentos aleatórios e de ter alguém
-                        que me incentiva.
+                        dos momentos aleatórios e de ter alguém que me incentiva.
                     </p>
+
 
                     <p>
                         Você foi se tornando uma pessoa muito especial pra mim.
                     </p>
 
+
                     <p>
                         E eu queria encontrar algum jeito de te mostrar isso.
                     </p>
+
 
                     <p class="assinatura">
                         então eu fiz esse site :)
@@ -507,7 +599,9 @@
                 </div>
 
 
-                <button onclick="irPara('suspense1')">
+                <button
+                    onclick="irPara('suspense1')"
+                >
                     continua 💗
                 </button>
 
@@ -516,9 +610,9 @@
         </section>
 
 
-        <!-- =========================
-             SUSPENSE 1
-        ========================== -->
+        <!-- =====================================
+             SUSPENSE
+        ====================================== -->
 
         <section
             class="tela suspense"
@@ -548,7 +642,9 @@
                 </p>
 
 
-                <button onclick="irPara('suspense2')">
+                <button
+                    onclick="irPara('suspense2')"
+                >
                     então por quê? 👀
                 </button>
 
@@ -557,9 +653,9 @@
         </section>
 
 
-        <!-- =========================
-             SUSPENSE 2
-        ========================== -->
+        <!-- =====================================
+             SUSPENSE FINAL
+        ====================================== -->
 
         <section
             class="tela suspense-final"
@@ -572,20 +668,25 @@
                     💗
                 </div>
 
+
                 <p class="mini">
                     Izza...
                 </p>
 
+
                 <h2>
                     Eu queria te perguntar uma coisa.
                 </h2>
+
 
                 <p class="texto">
                     E queria que fosse de um jeito especial.
                 </p>
 
 
-                <button onclick="irPara('pedido')">
+                <button
+                    onclick="irPara('pedido')"
+                >
                     pode perguntar...
                 </button>
 
@@ -594,9 +695,9 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =====================================
              PEDIDO
-        ========================== -->
+        ====================================== -->
 
         <section
             class="tela pedido"
@@ -608,6 +709,7 @@
                 <p class="mini">
                     então...
                 </p>
+
 
                 <h3>
                     Izzabelly 💗
@@ -628,6 +730,7 @@
                     prometo tentar abrir live quando você mandar
                 </p>
 
+
                 <p class="pedido-sub pequeno-pedido">
                     (eu disse tentar KKKKK)
                 </p>
@@ -637,6 +740,7 @@
                     class="area-botoes"
                     id="areaBotoes"
                 >
+
 
                     <button
                         class="sim"
@@ -653,6 +757,7 @@
                         não 😭
                     </button>
 
+
                 </div>
 
 
@@ -666,9 +771,9 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =====================================
              FINAL
-        ========================== -->
+        ====================================== -->
 
         <section
             class="tela final escondido"
@@ -681,9 +786,11 @@
                     confirmado oficialmente
                 </p>
 
+
                 <h1>
                     AAAAAAAAAA 😭💗
                 </h1>
+
 
                 <h2>
                     AGORA É OFICIAL
@@ -699,12 +806,14 @@
                     EU TENHO UMA NAMORADA
                 </p>
 
+
                 <p class="texto destaque">
                     te amo, meu bem 💗
                 </p>
 
 
                 <div class="final-gatos">
+
 
                     <div class="final-gato">
 
@@ -747,12 +856,14 @@
 
                     </div>
 
+
                 </div>
 
 
                 <p class="piada-final">
                     🐾 os três chegaram à mesma conclusão.
                 </p>
+
 
                 <p class="piada-final">
                     agora pode mandar eu abrir live KKKKK
@@ -762,12 +873,13 @@
 
         </section>
 
+
     </main>
 
 
-    <!-- =========================
-         MODAL DO NÃO
-    ========================== -->
+    <!-- =====================================
+         MODAL NÃO
+    ====================================== -->
 
     <div
         class="modal escondido"
@@ -780,15 +892,20 @@
                 💗
             </div>
 
+
             <h2>
                 tudo bem, meu bem
             </h2>
+
 
             <p>
                 Eu só queria que você soubesse o quanto é especial pra mim.
             </p>
 
-            <button onclick="fecharModal()">
+
+            <button
+                onclick="fecharModal()"
+            >
                 voltar 💗
             </button>
 
@@ -797,8 +914,7 @@
     </div>
 
 
-    <!-- IMPORTANTE: script no final -->
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
 
 </body>
 
