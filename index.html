@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffc8dd">
+
+    <title>Para a Izza 💗</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BARRA DE PROGRESSO -->
+    <div class="barra-topo">
+        <div class="progresso" id="progresso"></div>
+    </div>
+
+
+    <!-- ÁUDIO DO MC VV -->
+    <audio id="musicaMC" preload="auto">
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- CORAÇÕES FLUTUANTES -->
+    <div id="coracoes"></div>
+
+
+    <main>
+
+        <!-- =====================================
+             INÍCIO
+        ====================================== -->
+
+        <section class="tela inicio" id="inicio">
+
+            <div class="card-inicio">
+
+                <p class="mini">
+                    para uma certa pessoa 👀
+                </p>
+
+                <h1
+                    class="titulo-digitando"
+                    id="tituloDigitando"
+                ></h1>
+
+                <p
+                    class="sub inicio-sub escondido-suave"
+                    id="inicioSub"
+                >
+                    Eu queria fazer isso de um jeito um pouquinho diferente.
+                </p>
+
+                <button
+                    class="botao-principal escondido-suave"
+                    id="inicioBotao"
+                    onclick="irPara('gatos')"
+                >
+                    quero ver 👀
+                </button>
+
+                <div class="setinha">
+                    ↓
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             GATOS
+        ====================================== -->
+
+        <section class="tela" id="gatos">
+
+            <div class="conteudo reveal">
+
+                <p class="mini">
+                    etapa 1
+                </p>
+
+                <h2>
+                    Consultei meus especialistas.
+                </h2>
+
+                <p class="sub">
+                    decisões importantes exigem opiniões muito confiáveis.
+                </p>
+
+
+                <div class="galeria-gatos">
+
+                    <div class="polaroid gato1">
+
+                        <img
+                            src="imagens/gato1.jpeg"
+                            alt="Vários gatos juntos"
+                        >
+
+                        <strong>
+                            especialistas nº 1
+                        </strong>
+
+                        <span>
+                            reunião do conselho felino discutindo seriamente minha vida amorosa
+                        </span>
+
+                    </div>
+
+
+                    <div class="polaroid gato2">
+
+                        <img
+                            src="imagens/gato2.jpeg"
+                            alt="Gato dormindo"
+                        >
+
+                        <strong>
+                            especialista nº 2
+                        </strong>
+
+                        <span>
+                            ficou tão cansado de pensar que só dormiu
+                            <br>
+                            (não ajudou em absolutamente nada)
+                        </span>
+
+                    </div>
+
+
+                    <div class="polaroid gato3">
+
+                        <img
+                            src="imagens/gato3.jpeg"
+                            alt="Gato preto olhando para a câmera"
+                        >
+
+                        <strong>
+                            especialista nº 3
+                        </strong>
+
+                        <span>
+                            olhou bem pra mim e julgou silenciosamente
+                            <br>
+                            (eu confio muito nesse olhar)
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bilhete">
+
+                    <span>💌</span>
+
+                    Mesmo assim, os três chegaram à mesma conclusão...
+
+                </div>
+
+
+                <button onclick="irPara('live')">
+                    qual? 🤨
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             LIVE
+        ====================================== -->
+
+        <section class="tela diferente" id="live">
+
+            <div class="conteudo reveal">
+
+                <p class="mini">
+                    uma coisa que acontece frequentemente
+                </p>
+
+                <h2>
+                    Você tentando me motivar:
+                </h2>
+
+
+                <div class="chat">
+
+                    <div class="chat-topo">
+
+                        <div class="avatar">
+                            I
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Izza 💗
+                            </strong>
+
+                            <span>
+                                online
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bolha-chat">
+                        abre live
+                    </div>
+
+                    <div class="bolha-chat">
+                        vai abrir live?
+                    </div>
+
+                    <div class="bolha-chat grande">
+                        ABRE LIVE
+                    </div>
+
+                </div>
+
+
+                <p class="texto">
+                    Você fica me mandando abrir live toda hora KKKKK.
+                </p>
+
+                <p class="texto">
+                    E por mais que eu fique enrolando...
+                </p>
+
+                <p class="texto destaque">
+                    eu gosto de saber que você tá ali me incentivando e querendo me ver fazendo as coisas.
+                </p>
+
+
+                <button onclick="irPara('coisas')">
+                    tem mais 💗
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             COISAS QUE GOSTO
+        ====================================== -->
+
+        <section class="tela" id="coisas">
+
+            <div class="conteudo reveal">
+
+                <p class="mini">
+                    algumas coisas
+                </p>
+
+                <h2>
+                    Coisas que eu gosto em você 💗
+                </h2>
+
+
+                <div class="cards-amor">
+
+                    <div class="amor-card reveal-item">
+
+                        <span>💗</span>
+
+                        <p>
+                            Eu gosto de conversar com você.
+                        </p>
+
+                    </div>
+
+
+                    <div class="amor-card reveal-item">
+
+                        <span>🫶</span>
+
+                        <p>
+                            Eu gosto de como você tenta me motivar.
+                        </p>
+
+                    </div>
+
+
+                    <div class="amor-card reveal-item">
+
+                        <span>😭</span>
+
+                        <p>
+                            Eu gosto até das nossas conversas completamente aleatórias.
+                        </p>
+
+                    </div>
+
+
+                    <div class="amor-card reveal-item">
+
+                        <span>📱</span>
+
+                        <p>
+                            Até o seu “ABRE LIVE” virou uma coisa que eu gosto KKKKK.
+                        </p>
+
+                    </div>
+
+
+                    <div class="amor-card principal-amor reveal-item">
+
+                        <span>💕</span>
+
+                        <p>
+                            E, sem eu perceber direito, você foi ficando cada vez mais importante pra mim.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!--
+                    IMPORTANTE:
+                    esse botão agora também inicia o MC VV
+                -->
+
+                <button onclick="irParaMusicas()">
+                    continua 👀
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             MC VV
+        ====================================== -->
+
+        <section class="tela diferente" id="musicas">
+
+            <div class="conteudo reveal">
+
+                <p class="mini">
+                    aumenta o volume KKKKK
+                </p>
+
+                <h2>
+                    Uma escolha musical extremamente séria e romântica...
+                </h2>
+
+
+                <div
+                    class="player-falso"
+                    id="playerMCVV"
+                    onclick="tocarMCVV()"
+                >
+
+                    <div class="disco" id="discoMC">
+                        💿
+                    </div>
+
+
+                    <div class="info-musica">
+
+                        <p
+                            class="tocando"
+                            id="statusMusica"
+                        >
+                            PREPARADO...
+                        </p>
+
+                        <h3>
+                            MC VV — Nós Dois Contra o Mundo
+                        </h3>
+
+                        <p>
+                            sim, eu realmente coloquei MC VV no pedido de namoro KKKKK
+                        </p>
+
+                    </div>
+
+
+                    <div class="ondas">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+
+                <p class="aviso-player">
+                    toca no CD se quiser pausar ou continuar 🎵
+                </p>
+
+
+                <p class="risada">
+                    não reclama, meu amor KKKKKKK
+                </p>
+
+
+                <button onclick="agoraSerio()">
+                    tá... agora sério 💗
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CARTA
+        ====================================== -->
+
+        <section class="tela serio" id="serio">
+
+            <div class="conteudo reveal">
+
+                <p class="mini">
+                    agora sem zoeira
+                </p>
+
+                <h2>
+                    Meu bem...
+                </h2>
+
+
+                <div class="carta">
+
+                    <div class="coracao-carta">
+                        💗
+                    </div>
+
+                    <p>
+                        Eu gosto muito de ter você na minha vida.
+                    </p>
+
+                    <p>
+                        Gosto das nossas conversas, das besteiras, dos momentos aleatórios e de ter alguém que me incentiva.
+                    </p>
+
+                    <p>
+                        Você foi se tornando uma pessoa muito especial pra mim.
+                    </p>
+
+                    <p>
+                        E eu queria encontrar algum jeito de te mostrar isso.
+                    </p>
+
+                    <p class="assinatura">
+                        então eu fiz esse site :)
+                    </p>
+
+                </div>
+
+
+                <button onclick="irPara('suspense1')">
+                    continua 💗
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             SUSPENSE 1
+        ====================================== -->
+
+        <section class="tela suspense" id="suspense1">
+
+            <div class="conteudo reveal">
+
+                <p class="suspense-texto">
+                    Mas...
+                </p>
+
+                <p class="suspense-texto">
+                    eu não fiz tudo isso
+                </p>
+
+                <p class="suspense-texto">
+                    só pra falar dos gatos...
+                </p>
+
+                <p class="suspense-texto">
+                    das lives...
+                </p>
+
+                <p class="suspense-texto">
+                    ou das músicas aleatórias.
+                </p>
+
+
+                <button onclick="irPara('suspense2')">
+                    então por quê? 👀
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             SUSPENSE 2
+        ====================================== -->
+
+        <section class="tela suspense-final" id="suspense2">
+
+            <div class="conteudo reveal">
+
+                <div class="coracao-lento">
+                    💗
+                </div>
+
+                <p class="mini">
+                    Izza...
+                </p>
+
+                <h2>
+                    Eu queria te perguntar uma coisa.
+                </h2>
+
+                <p class="texto">
+                    E queria que fosse de um jeito especial.
+                </p>
+
+
+                <button onclick="irPara('pedido')">
+                    pode perguntar...
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PEDIDO
+        ====================================== -->
+
+        <section class="tela pedido" id="pedido">
+
+            <div class="pedido-card reveal">
+
+                <p class="mini">
+                    então...
+                </p>
+
+                <h3>
+                    Izzabelly 💗
+                </h3>
+
+                <div class="coracao-pedido">
+                    💗
+                </div>
+
+                <h1>
+                    Quer namorar comigo?
+                </h1>
+
+
+                <p class="pedido-sub">
+                    prometo tentar abrir live quando você mandar
+                </p>
+
+                <p class="pedido-sub pequeno-pedido">
+                    (eu disse tentar KKKKK)
+                </p>
+
+
+                <div class="area-botoes" id="areaBotoes">
+
+                    <button
+                        class="sim"
+                        onclick="aceitou()"
+                    >
+                        SIM 💕
+                    </button>
+
+                    <button
+                        class="nao"
+                        id="botaoNao"
+                    >
+                        não 😭
+                    </button>
+
+                </div>
+
+
+                <p
+                    class="contador-nao"
+                    id="contadorNao"
+                ></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             FINAL
+        ====================================== -->
+
+        <section
+            class="tela final escondido"
+            id="finalSim"
+        >
+
+            <div class="final-card">
+
+                <p class="mini">
+                    confirmado oficialmente
+                </p>
+
+                <h1>
+                    AAAAAAAAAA 😭💗
+                </h1>
+
+                <h2>
+                    AGORA É OFICIAL
+                </h2>
+
+
+                <div class="coracoes-final">
+                    💗 💕 💗
+                </div>
+
+
+                <p class="texto">
+                    EU TENHO UMA NAMORADA
+                </p>
+
+                <p class="texto destaque">
+                    te amo, meu bem 💗
+                </p>
+
+
+                <div class="final-gatos">
+
+                    <div class="final-gato">
+
+                        <img
+                            src="imagens/gato1.jpeg"
+                            alt="Conselho dos gatos"
+                        >
+
+                        <span>
+                            os especialistas
+                        </span>
+
+                    </div>
+
+
+                    <div class="final-gato">
+
+                        <img
+                            src="imagens/gato2.jpeg"
+                            alt="Gato dormindo"
+                        >
+
+                        <span>
+                            também
+                        </span>
+
+                    </div>
+
+
+                    <div class="final-gato">
+
+                        <img
+                            src="imagens/gato3.jpeg"
+                            alt="Gato preto"
+                        >
+
+                        <span>
+                            aprovam! 💗
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p class="piada-final">
+                    🐾 os três chegaram à mesma conclusão.
+                </p>
+
+                <p class="piada-final">
+                    agora pode mandar eu abrir live KKKKK
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================
+         MODAL DO NÃO
+    ====================================== -->
+
+    <div
+        class="modal escondido"
+        id="modalNao"
+    >
+
+        <div class="modal-card">
+
+            <div class="modal-coracao">
+                💗
+            </div>
+
+            <h2>
+                tudo bem, meu bem
+            </h2>
+
+            <p>
+                Eu só queria que você soubesse o quanto é especial pra mim.
+            </p>
+
+            <button onclick="fecharModal()">
+                voltar 💗
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
