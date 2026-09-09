@@ -13,29 +13,47 @@
 
 <body>
 
-    <!-- BARRA DE PROGRESSO -->
-    <div class="barra-topo">
-        <div class="progresso" id="progresso"></div>
-    </div>
+    <!-- =========================
+         ÁUDIOS
+    ========================== -->
 
-
-    <!-- ÁUDIO DO MC VV -->
+    <!-- Trecho do MC VV -->
     <audio id="musicaMC" preload="auto">
         <source src="musica.mp3" type="audio/mpeg">
     </audio>
 
+    <!-- I Wanna Be Yours -->
+    <audio id="musicaRomantica" preload="auto">
+        <source src="romantica.mp3" type="audio/mpeg">
+    </audio>
 
-    <!-- CORAÇÕES FLUTUANTES -->
+
+    <!-- =========================
+         BARRA DE PROGRESSO
+    ========================== -->
+
+    <div class="barra-topo">
+        <div
+            class="progresso"
+            id="progresso"
+        ></div>
+    </div>
+
+
+    <!-- CORAÇÕES -->
     <div id="coracoes"></div>
 
 
     <main>
 
-        <!-- =====================================
+        <!-- =========================
              INÍCIO
-        ====================================== -->
+        ========================== -->
 
-        <section class="tela inicio" id="inicio">
+        <section
+            class="tela inicio"
+            id="inicio"
+        >
 
             <div class="card-inicio">
 
@@ -72,11 +90,14 @@
         </section>
 
 
-        <!-- =====================================
+        <!-- =========================
              GATOS
-        ====================================== -->
+        ========================== -->
 
-        <section class="tela" id="gatos">
+        <section
+            class="tela"
+            id="gatos"
+        >
 
             <div class="conteudo reveal">
 
@@ -173,11 +194,14 @@
         </section>
 
 
-        <!-- =====================================
+        <!-- =========================
              LIVE
-        ====================================== -->
+        ========================== -->
 
-        <section class="tela diferente" id="live">
+        <section
+            class="tela diferente"
+            id="live"
+        >
 
             <div class="conteudo reveal">
 
@@ -237,7 +261,8 @@
                 </p>
 
                 <p class="texto destaque">
-                    eu gosto de saber que você tá ali me incentivando e querendo me ver fazendo as coisas.
+                    eu gosto de saber que você tá ali me incentivando
+                    e querendo me ver fazendo as coisas.
                 </p>
 
 
@@ -250,11 +275,14 @@
         </section>
 
 
-        <!-- =====================================
-             COISAS QUE GOSTO
-        ====================================== -->
+        <!-- =========================
+             COISAS
+        ========================== -->
 
-        <section class="tela" id="coisas">
+        <section
+            class="tela"
+            id="coisas"
+        >
 
             <div class="conteudo reveal">
 
@@ -326,10 +354,7 @@
                 </div>
 
 
-                <!--
-                    IMPORTANTE:
-                    esse botão agora também inicia o MC VV
-                -->
+                <!-- ESSE BOTÃO INICIA O MC VV -->
 
                 <button onclick="irParaMusicas()">
                     continua 👀
@@ -340,11 +365,14 @@
         </section>
 
 
-        <!-- =====================================
-             MC VV
-        ====================================== -->
+        <!-- =========================
+             MÚSICA / MC VV
+        ========================== -->
 
-        <section class="tela diferente" id="musicas">
+        <section
+            class="tela diferente"
+            id="musicas"
+        >
 
             <div class="conteudo reveal">
 
@@ -363,7 +391,10 @@
                     onclick="tocarMCVV()"
                 >
 
-                    <div class="disco" id="discoMC">
+                    <div
+                        class="disco"
+                        id="discoMC"
+                    >
                         💿
                     </div>
 
@@ -405,11 +436,15 @@
                     toca no CD se quiser pausar ou continuar 🎵
                 </p>
 
-
                 <p class="risada">
                     não reclama, meu amor KKKKKKK
                 </p>
 
+
+                <!--
+                    PARA MC VV
+                    COMEÇA I WANNA BE YOURS
+                -->
 
                 <button onclick="agoraSerio()">
                     tá... agora sério 💗
@@ -420,11 +455,14 @@
         </section>
 
 
-        <!-- =====================================
+        <!-- =========================
              CARTA
-        ====================================== -->
+        ========================== -->
 
-        <section class="tela serio" id="serio">
+        <section
+            class="tela serio"
+            id="serio"
+        >
 
             <div class="conteudo reveal">
 
@@ -443,12 +481,15 @@
                         💗
                     </div>
 
+
                     <p>
                         Eu gosto muito de ter você na minha vida.
                     </p>
 
                     <p>
-                        Gosto das nossas conversas, das besteiras, dos momentos aleatórios e de ter alguém que me incentiva.
+                        Gosto das nossas conversas, das besteiras,
+                        dos momentos aleatórios e de ter alguém
+                        que me incentiva.
                     </p>
 
                     <p>
@@ -475,11 +516,14 @@
         </section>
 
 
-        <!-- =====================================
+        <!-- =========================
              SUSPENSE 1
-        ====================================== -->
+        ========================== -->
 
-        <section class="tela suspense" id="suspense1">
+        <section
+            class="tela suspense"
+            id="suspense1"
+        >
 
             <div class="conteudo reveal">
 
@@ -513,11 +557,14 @@
         </section>
 
 
-        <!-- =====================================
+        <!-- =========================
              SUSPENSE 2
-        ====================================== -->
+        ========================== -->
 
-        <section class="tela suspense-final" id="suspense2">
+        <section
+            class="tela suspense-final"
+            id="suspense2"
+        >
 
             <div class="conteudo reveal">
 
@@ -547,11 +594,14 @@
         </section>
 
 
-        <!-- =====================================
+        <!-- =========================
              PEDIDO
-        ====================================== -->
+        ========================== -->
 
-        <section class="tela pedido" id="pedido">
+        <section
+            class="tela pedido"
+            id="pedido"
+        >
 
             <div class="pedido-card reveal">
 
@@ -563,9 +613,11 @@
                     Izzabelly 💗
                 </h3>
 
+
                 <div class="coracao-pedido">
                     💗
                 </div>
+
 
                 <h1>
                     Quer namorar comigo?
@@ -581,7 +633,10 @@
                 </p>
 
 
-                <div class="area-botoes" id="areaBotoes">
+                <div
+                    class="area-botoes"
+                    id="areaBotoes"
+                >
 
                     <button
                         class="sim"
@@ -589,6 +644,7 @@
                     >
                         SIM 💕
                     </button>
+
 
                     <button
                         class="nao"
@@ -610,9 +666,9 @@
         </section>
 
 
-        <!-- =====================================
+        <!-- =========================
              FINAL
-        ====================================== -->
+        ========================== -->
 
         <section
             class="tela final escondido"
@@ -709,9 +765,9 @@
     </main>
 
 
-    <!-- =====================================
+    <!-- =========================
          MODAL DO NÃO
-    ====================================== -->
+    ========================== -->
 
     <div
         class="modal escondido"
@@ -741,7 +797,8 @@
     </div>
 
 
-    <script src="script.js"></script>
+    <!-- IMPORTANTE: script no final -->
+    <script src="script.js?v=3"></script>
 
 </body>
 
