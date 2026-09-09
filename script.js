@@ -43,7 +43,7 @@ const TEMPO_ROMANTICA =
 
 // volume da música inicial
 const VOLUME_INICIO =
-    0.12;
+    0.5;
 
 // volume da romântica
 const VOLUME_ROMANTICA =
