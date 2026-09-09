@@ -1,18 +1,61 @@
 // ==========================================
-// ELEMENTOS DE ÁUDIO
+// MÚSICAS
 // ==========================================
 
+const musicaInicio =
+    document.getElementById(
+        "musicaInicio"
+    );
+
 const musicaMC =
-    document.getElementById("musicaMC");
+    document.getElementById(
+        "musicaMC"
+    );
 
 const musicaRomantica =
-    document.getElementById("musicaRomantica");
+    document.getElementById(
+        "musicaRomantica"
+    );
 
 const playerMCVV =
-    document.getElementById("playerMCVV");
+    document.getElementById(
+        "playerMCVV"
+    );
 
 const statusMusica =
-    document.getElementById("statusMusica");
+    document.getElementById(
+        "statusMusica"
+    );
+
+
+// ==========================================
+// CONFIGURAÇÃO DAS MÚSICAS
+// ==========================================
+
+// From The Start começa em 13 segundos
+const TEMPO_INICIO =
+    13;
+
+// I Wanna Be Yours começa em 13 segundos
+const TEMPO_ROMANTICA =
+    13;
+
+
+// volume da música inicial
+const VOLUME_INICIO =
+    0.25;
+
+// volume da romântica
+const VOLUME_ROMANTICA =
+    0.55;
+
+
+// controla fade
+let fadeInicio =
+    null;
+
+let fadeRomantica =
+    null;
 
 
 // ==========================================
@@ -22,21 +65,217 @@ const statusMusica =
 function irPara(id) {
 
     const elemento =
-        document.getElementById(id);
+        document.getElementById(
+            id
+        );
 
     if (!elemento) {
+
         console.error(
-            "Não encontrei a seção:",
+            "Não achei:",
             id
         );
 
         return;
     }
 
+
     elemento.scrollIntoView({
         behavior: "smooth",
         block: "start"
     });
+
+}
+
+
+// ==========================================
+// PRIMEIRO BOTÃO
+//
+// COMEÇA FROM THE START
+// ==========================================
+
+function comecarSite() {
+
+    /*
+        PRIMEIRO MUDA DE SEÇÃO.
+
+        Assim, mesmo se o navegador
+        der algum erro com o áudio,
+        o botão continua funcionando.
+    */
+
+    irPara(
+        "gatos"
+    );
+
+
+    if (!musicaInicio) {
+
+        console.error(
+            "inicio.mp3 não encontrado"
+        );
+
+        return;
+
+    }
+
+
+    // garante que as outras estão paradas
+
+    if (musicaMC) {
+
+        musicaMC.pause();
+
+    }
+
+
+    if (musicaRomantica) {
+
+        musicaRomantica.pause();
+
+    }
+
+
+    // cancela fade anterior
+
+    if (fadeInicio) {
+
+        clearInterval(
+            fadeInicio
+        );
+
+        fadeInicio =
+            null;
+
+    }
+
+
+    /*
+        Começa From The Start
+        nos 13 segundos
+    */
+
+    try {
+
+        musicaInicio.currentTime =
+            TEMPO_INICIO;
+
+        musicaInicio.volume =
+            0;
+
+    } catch (erro) {
+
+        console.log(
+            erro
+        );
+
+    }
+
+
+    musicaInicio
+        .play()
+        .then(() => {
+
+            let volume =
+                0;
+
+
+            fadeInicio =
+                setInterval(
+                    () => {
+
+                        volume +=
+                            0.02;
+
+
+                        if (
+                            volume >=
+                            VOLUME_INICIO
+                        ) {
+
+                            volume =
+                                VOLUME_INICIO;
+
+
+                            clearInterval(
+                                fadeInicio
+                            );
+
+
+                            fadeInicio =
+                                null;
+
+                        }
+
+
+                        musicaInicio.volume =
+                            volume;
+
+                    },
+                    100
+                );
+
+        })
+        .catch(
+            erro => {
+
+                console.error(
+                    "Erro ao tocar From The Start:",
+                    erro
+                );
+
+            }
+        );
+
+}
+
+
+// ==========================================
+// LOOP FROM THE START
+//
+// TERMINOU?
+// VOLTA PARA 13 SEGUNDOS
+// ==========================================
+
+if (musicaInicio) {
+
+    musicaInicio.loop =
+        false;
+
+
+    musicaInicio.addEventListener(
+        "ended",
+        () => {
+
+            try {
+
+                musicaInicio.currentTime =
+                    TEMPO_INICIO;
+
+            } catch (erro) {
+
+                console.log(
+                    erro
+                );
+
+            }
+
+
+            musicaInicio
+                .play()
+                .catch(
+                    erro => {
+
+                        console.log(
+                            erro
+                        );
+
+                    }
+                );
+
+        }
+    );
+
 }
 
 
@@ -47,29 +286,37 @@ function irPara(id) {
 const titulo =
     "Izza... eu fiz uma coisinha pra você 💗";
 
+
 const tituloElemento =
     document.getElementById(
         "tituloDigitando"
     );
+
 
 const inicioSub =
     document.getElementById(
         "inicioSub"
     );
 
+
 const inicioBotao =
     document.getElementById(
         "inicioBotao"
     );
 
-let letraAtual = 0;
+
+let letraAtual =
+    0;
 
 
 function digitarTitulo() {
 
     if (!tituloElemento) {
+
         return;
+
     }
+
 
     if (
         letraAtual <
@@ -81,7 +328,9 @@ function digitarTitulo() {
                 letraAtual
             );
 
+
         letraAtual++;
+
 
         setTimeout(
             digitarTitulo,
@@ -90,50 +339,56 @@ function digitarTitulo() {
 
     } else {
 
-        setTimeout(() => {
-
-            if (inicioSub) {
-                inicioSub
-                    .classList
-                    .add(
-                        "mostrar"
-                    );
-            }
-
-        }, 300);
-
-
-        setTimeout(() => {
-
-            if (inicioBotao) {
-                inicioBotao
-                    .classList
-                    .add(
-                        "mostrar"
-                    );
-            }
-
-        }, 700);
-
-    }
-}
-
-
-window.addEventListener(
-    "load",
-    () => {
 
         setTimeout(
-            digitarTitulo,
-            500
+            () => {
+
+                if (inicioSub) {
+
+                    inicioSub
+                        .classList
+                        .add(
+                            "mostrar"
+                        );
+
+                }
+
+            },
+            300
+        );
+
+
+        setTimeout(
+            () => {
+
+                if (inicioBotao) {
+
+                    inicioBotao
+                        .classList
+                        .add(
+                            "mostrar"
+                        );
+
+                }
+
+            },
+            700
         );
 
     }
+
+}
+
+
+// começa a digitação
+setTimeout(
+    digitarTitulo,
+    500
 );
 
 
 // ==========================================
-// PROGRESSO
+// BARRA DE PROGRESSO
 // ==========================================
 
 function atualizarProgresso() {
@@ -143,30 +398,43 @@ function atualizarProgresso() {
             "progresso"
         );
 
+
     if (!progresso) {
+
         return;
+
     }
+
 
     const scrollAtual =
         window.scrollY;
+
 
     const altura =
         document.documentElement.scrollHeight
         -
         window.innerHeight;
 
+
     const porcentagem =
         altura > 0
             ?
             (
-                scrollAtual /
+                scrollAtual
+                /
                 altura
-            ) * 100
+            )
+            *
+            100
             :
             0;
 
+
     progresso.style.width =
-        porcentagem + "%";
+        porcentagem
+        +
+        "%";
+
 }
 
 
@@ -177,7 +445,7 @@ window.addEventListener(
 
 
 // ==========================================
-// CORAÇÕES FLUTUANTES
+// CORAÇÕES DE FUNDO
 // ==========================================
 
 function criarCoracao() {
@@ -187,14 +455,19 @@ function criarCoracao() {
             "coracoes"
         );
 
+
     if (!container) {
+
         return;
+
     }
+
 
     const elemento =
         document.createElement(
             "div"
         );
+
 
     elemento.classList.add(
         "coracao-flutuante"
@@ -258,10 +531,15 @@ function criarCoracao() {
 
     setTimeout(
         () => {
+
             elemento.remove();
+
         },
-        duracao * 1000
+        duracao
+        *
+        1000
     );
+
 }
 
 
@@ -272,7 +550,7 @@ setInterval(
 
 
 // ==========================================
-// REVEAL
+// REVEAL DAS SEÇÕES
 // ==========================================
 
 const observer =
@@ -341,7 +619,9 @@ if (secaoCards) {
                         if (
                             !entry.isIntersecting
                         ) {
+
                             return;
+
                         }
 
 
@@ -394,7 +674,7 @@ if (secaoCards) {
 
 
 // ==========================================
-// VISUAL DO MC VV
+// VISUAL MC VV
 // ==========================================
 
 function mostrarMCTocando() {
@@ -446,16 +726,14 @@ function mostrarMCParado() {
 // ==========================================
 // CONTINUA 👀
 //
-// CLICOU:
-// 1. MC VV começa
-// 2. desce pro CD
+// PARA FROM THE START
+// COMEÇA MC VV
 // ==========================================
 
 function irParaMusicas() {
 
     /*
-        O scroll funciona
-        independentemente do áudio.
+        PRIMEIRO SCROLL
     */
 
     irPara(
@@ -463,20 +741,32 @@ function irParaMusicas() {
     );
 
 
-    if (!musicaMC) {
+    // ===============================
+    // PARA FROM THE START
+    // ===============================
 
-        console.error(
-            "musicaMC não encontrada"
-        );
+    if (musicaInicio) {
 
-        return;
+        if (fadeInicio) {
+
+            clearInterval(
+                fadeInicio
+            );
+
+            fadeInicio =
+                null;
+
+        }
+
+
+        musicaInicio.pause();
+
     }
 
 
-    /*
-        Se a romântica estiver tocando,
-        para.
-    */
+    // ===============================
+    // PARA A ROMÂNTICA SE PRECISAR
+    // ===============================
 
     if (musicaRomantica) {
 
@@ -485,25 +775,47 @@ function irParaMusicas() {
     }
 
 
-    /*
-        MC VV começa do início
-        do arquivo musica.mp3.
-    */
+    // ===============================
+    // MC VV
+    // ===============================
 
-    musicaMC.pause();
+    if (!musicaMC) {
 
-    musicaMC.currentTime = 0;
+        console.error(
+            "musica.mp3 não encontrado"
+        );
 
-    musicaMC.volume = 1;
+        return;
+
+    }
+
+
+    try {
+
+        musicaMC.currentTime =
+            0;
+
+        musicaMC.volume =
+            1;
+
+    } catch (erro) {
+
+        console.log(
+            erro
+        );
+
+    }
 
 
     musicaMC
         .play()
-        .then(() => {
+        .then(
+            () => {
 
-            mostrarMCTocando();
+                mostrarMCTocando();
 
-        })
+            }
+        )
         .catch(
             erro => {
 
@@ -511,6 +823,7 @@ function irParaMusicas() {
                     "Erro ao tocar MC VV:",
                     erro
                 );
+
 
                 mostrarMCParado();
 
@@ -521,7 +834,7 @@ function irParaMusicas() {
 
 
 // ==========================================
-// CLICAR NO CD
+// CLICOU NO CD
 //
 // PAUSA / CONTINUA MC VV
 // ==========================================
@@ -529,7 +842,9 @@ function irParaMusicas() {
 function tocarMCVV() {
 
     if (!musicaMC) {
+
         return;
+
     }
 
 
@@ -542,28 +857,23 @@ function tocarMCVV() {
         mostrarMCParado();
 
         return;
-    }
-
-
-    if (musicaRomantica) {
-
-        musicaRomantica.pause();
 
     }
 
 
     musicaMC
         .play()
-        .then(() => {
+        .then(
+            () => {
 
-            mostrarMCTocando();
+                mostrarMCTocando();
 
-        })
+            }
+        )
         .catch(
             erro => {
 
-                console.error(
-                    "Erro ao tocar:",
+                console.log(
                     erro
                 );
 
@@ -574,7 +884,7 @@ function tocarMCVV() {
 
 
 // ==========================================
-// QUANDO MC VV TERMINAR
+// QUANDO MC VV ACABAR
 // ==========================================
 
 if (musicaMC) {
@@ -600,24 +910,16 @@ if (musicaMC) {
 
 
 // ==========================================
-// AGORA SÉRIO 💗
+// TÁ... AGORA SÉRIO 💗
 //
-// 1. para MC VV
-// 2. começa I WANNA BE YOURS em 0:13
-// 3. fade-in
-// 4. vai pra carta
+// PARA MC VV
+// COMEÇA I WANNA BE YOURS
 // ==========================================
-
-let fadeRomantica = null;
-
 
 function agoraSerio() {
 
     /*
-        PRIMEIRO VAI PRA CARTA.
-
-        Assim mesmo se o áudio der erro,
-        o botão continua funcionando.
+        Vai para a carta primeiro.
     */
 
     irPara(
@@ -625,14 +927,38 @@ function agoraSerio() {
     );
 
 
+    // ===============================
+    // PARA FROM THE START
+    // ===============================
+
+    if (musicaInicio) {
+
+        musicaInicio.pause();
+
+    }
+
+
+    // ===============================
     // PARA MC VV
+    // ===============================
 
     if (musicaMC) {
 
         musicaMC.pause();
 
-        musicaMC.currentTime =
-            0;
+
+        try {
+
+            musicaMC.currentTime =
+                0;
+
+        } catch (erro) {
+
+            console.log(
+                erro
+            );
+
+        }
 
     }
 
@@ -640,19 +966,22 @@ function agoraSerio() {
     mostrarMCParado();
 
 
-    // CONFERE ROMÂNTICA
+    // ===============================
+    // I WANNA BE YOURS
+    // ===============================
 
     if (!musicaRomantica) {
 
         console.error(
-            "musicaRomantica não encontrada"
+            "romantica.mp3 não encontrada"
         );
 
         return;
+
     }
 
 
-    // CANCELA FADE ANTIGO
+    // cancela fade anterior
 
     if (fadeRomantica) {
 
@@ -660,75 +989,82 @@ function agoraSerio() {
             fadeRomantica
         );
 
+
         fadeRomantica =
             null;
 
     }
 
 
-    /*
-        I WANNA BE YOURS
-        começa aos 13 segundos.
-    */
+    try {
 
-    musicaRomantica.pause();
+        musicaRomantica.currentTime =
+            TEMPO_ROMANTICA;
 
-    musicaRomantica.currentTime =
-        13;
 
-    musicaRomantica.volume =
-        0;
+        musicaRomantica.volume =
+            0;
+
+    } catch (erro) {
+
+        console.log(
+            erro
+        );
+
+    }
 
 
     musicaRomantica
         .play()
-        .then(() => {
+        .then(
+            () => {
 
-            let volume =
-                0;
-
-
-            fadeRomantica =
-                setInterval(
-                    () => {
-
-                        volume +=
-                            0.04;
+                let volume =
+                    0;
 
 
-                        if (
-                            volume >=
-                            0.55
-                        ) {
+                fadeRomantica =
+                    setInterval(
+                        () => {
 
-                            volume =
-                                0.55;
-
-
-                            clearInterval(
-                                fadeRomantica
-                            );
+                            volume +=
+                                0.04;
 
 
-                            fadeRomantica =
-                                null;
+                            if (
+                                volume >=
+                                VOLUME_ROMANTICA
+                            ) {
 
-                        }
+                                volume =
+                                    VOLUME_ROMANTICA;
 
 
-                        musicaRomantica.volume =
-                            volume;
+                                clearInterval(
+                                    fadeRomantica
+                                );
 
-                    },
-                    100
-                );
 
-        })
+                                fadeRomantica =
+                                    null;
+
+                            }
+
+
+                            musicaRomantica.volume =
+                                volume;
+
+                        },
+                        100
+                    );
+
+            }
+        )
         .catch(
             erro => {
 
                 console.error(
-                    "Erro na música romântica:",
+                    "Erro ao tocar I Wanna Be Yours:",
                     erro
                 );
 
@@ -739,10 +1075,10 @@ function agoraSerio() {
 
 
 // ==========================================
-// LOOP DA ROMÂNTICA
+// LOOP I WANNA BE YOURS
 //
 // TERMINOU?
-// VOLTA PRA 0:13
+// VOLTA PARA 13 SEGUNDOS
 // ==========================================
 
 if (musicaRomantica) {
@@ -755,8 +1091,18 @@ if (musicaRomantica) {
         "ended",
         () => {
 
-            musicaRomantica.currentTime =
-                13;
+            try {
+
+                musicaRomantica.currentTime =
+                    TEMPO_ROMANTICA;
+
+            } catch (erro) {
+
+                console.log(
+                    erro
+                );
+
+            }
 
 
             musicaRomantica
@@ -764,8 +1110,7 @@ if (musicaRomantica) {
                 .catch(
                     erro => {
 
-                        console.error(
-                            "Erro ao repetir:",
+                        console.log(
                             erro
                         );
 
@@ -787,10 +1132,12 @@ const botaoNao =
         "botaoNao"
     );
 
+
 const area =
     document.getElementById(
         "areaBotoes"
     );
+
 
 const contador =
     document.getElementById(
@@ -800,6 +1147,7 @@ const contador =
 
 let fugas =
     0;
+
 
 const maxFugas =
     25;
@@ -872,7 +1220,9 @@ function fugirDoNao(
         frasesNao[
             Math.min(
                 fugas,
-                frasesNao.length - 1
+                frasesNao.length
+                -
+                1
             )
         ];
 
@@ -883,9 +1233,11 @@ function fugirDoNao(
             fugas < maxFugas
 
                 ?
+
                 `${fugas}/${maxFugas} tentativas KKKK`
 
                 :
+
                 "ok... agora ele parou 😭";
 
     }
@@ -894,11 +1246,14 @@ function fugirDoNao(
     const larguraArea =
         area.clientWidth;
 
+
     const alturaArea =
         area.clientHeight;
 
+
     const larguraBotao =
         botaoNao.offsetWidth;
+
 
     const alturaBotao =
         botaoNao.offsetHeight;
@@ -930,7 +1285,9 @@ function fugirDoNao(
         Math.random()
         *
         Math.max(
-            maxX - margem,
+            maxX
+            -
+            margem,
             1
         );
 
@@ -941,7 +1298,9 @@ function fugirDoNao(
         Math.random()
         *
         Math.max(
-            maxY - margem,
+            maxY
+            -
+            margem,
             1
         );
 
@@ -949,26 +1308,35 @@ function fugirDoNao(
     botaoNao.style.right =
         "auto";
 
+
     botaoNao.style.bottom =
         "auto";
 
+
     botaoNao.style.left =
-        x + "px";
+        x
+        +
+        "px";
+
 
     botaoNao.style.top =
-        y + "px";
+        y
+        +
+        "px";
 
 }
 
 
 // ==========================================
-// EVENTOS DO NÃO
+// EVENTOS BOTÃO NÃO
 // ==========================================
 
 if (
-    botaoNao &&
+    botaoNao
+    &&
     area
 ) {
+
 
     botaoNao.addEventListener(
         "mouseenter",
@@ -1086,7 +1454,7 @@ function fecharModal() {
 
 
 // ==========================================
-// SIM
+// BOTÃO SIM
 // ==========================================
 
 function aceitou() {
@@ -1098,7 +1466,9 @@ function aceitou() {
 
 
     if (!final) {
+
         return;
+
     }
 
 
@@ -1128,7 +1498,7 @@ function aceitou() {
 
 
 // ==========================================
-// EXPLOSÃO FINAL
+// EXPLOSÃO DE CORAÇÕES
 // ==========================================
 
 function explosaoDeCoracoes() {
@@ -1224,7 +1594,9 @@ function explosaoDeCoracoes() {
                 );
 
             },
-            i * 17
+            i
+            *
+            17
         );
 
     }
